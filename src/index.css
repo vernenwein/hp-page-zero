@@ -2,10 +2,26 @@ body,
 #root {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* SEE HOW TO FIX THAT */
+
+.btn-active {
+  color: turquoise;
+}
+
+.btn-active svg {
+  stroke: turquoise;
+}
+
+/* CHECK HOW TO ANIMATE BETWEEN TWO STATES OF "BOX" width*/
+
+.transition-1 {
+  transition-duration: 0.5s;
 }

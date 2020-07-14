@@ -1,11 +1,14 @@
 import React from "react";
-import { Sidebar, Nav } from "grommet";
+import { Box, Nav, Button } from "grommet";
+import { Contract, Expand } from "grommet-icons";
 import { useLocation, useHistory } from "react-router-dom";
 
 import NavigationConfig from "./config";
 import NavigationLink from "./NavigationLink";
 
 const Navigation = (props) => {
+  const { isOpen, onToggleMenu } = props;
+
   const location = useLocation();
   const history = useHistory();
 
@@ -15,26 +18,27 @@ const Navigation = (props) => {
   };
 
   return (
-    <Sidebar
-      background="brand"
-      header={<div>Valerie's Dashboard</div>}
-      footer={<div>Here are footer infos</div>}
-    >
-      <Nav gap="small">
+    <Box width={isOpen ? "480px" : "80px"} className="transition-1">
+      <Nav gap="small" align="center">
+        <Button
+          onClick={onToggleMenu}
+          icon={isOpen ? <Contract /> : <Expand />}
+        ></Button>
         {NavigationConfig.map((item) => {
           const { label, pathname, icon } = item;
           return (
             <NavigationLink
               currentPathname={location.pathname}
-              label={label}
+              label={isOpen && label}
               pathname={pathname}
               onClick={handleNavigate}
               icon={icon}
+              isOpen={isOpen}
             />
           );
         })}
       </Nav>
-    </Sidebar>
+    </Box>
   );
 };
 
