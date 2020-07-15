@@ -10,18 +10,58 @@ a {
   color: inherit;
 }
 
-/* SEE HOW TO FIX THAT */
-
-.btn-active {
-  color: turquoise;
+.nowrap {
+  white-space: nowrap;
 }
 
-.btn-active svg {
-  stroke: turquoise;
+.todoText {
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.8s;
 }
 
-/* CHECK HOW TO ANIMATE BETWEEN TWO STATES OF "BOX" width*/
+.todoText.completed {
+  color: rgba(36, 42, 56, 0.4);
+}
+
+.todoText::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  transform: translateX(-100%);
+  background: rgba(36, 42, 56, 0.4);
+  top: 50%;
+  left: 0;
+  transition-duration: 0.8s;
+}
+
+.todoText.completed::after {
+  transform: translateX(0%);
+}
+
+/* CHECK HOW TO ANIMATE BETWEEN TWO STATES OF "BOX" width in grommet*/
 
 .transition-1 {
   transition-duration: 0.5s;
+}
+
+h2 {
+  color: #fea788;
+  margin: 0;
+}
+
+h3,
+p {
+  color: #242a38;
+}
+
+h3 {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(36, 42, 56, 0.1);
+}
+
+h4 {
+  color: rgba(36, 42, 56, 0.4);
 }

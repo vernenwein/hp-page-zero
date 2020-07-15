@@ -7,7 +7,13 @@ import VisionList from "../../pages/Vision/VisionList";
 
 const ContentBox = (props) => {
   return (
-    <Box background="#fff" round="small" padd="small" flex="grow">
+    <Box
+      background="#fff"
+      round="small"
+      padd="small"
+      flex="grow"
+      overflow="hidden"
+    >
       <Box flex="grow">
         <Switch>
           <Route exact path="/">

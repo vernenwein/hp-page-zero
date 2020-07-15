@@ -12,7 +12,7 @@ const theme = {
       "primary-dark": "#242A38",
     },
     font: {
-      family: "Nunito",
+      family: "Ubuntu",
       size: "18px",
       height: "20px",
       active: {
@@ -21,6 +21,34 @@ const theme = {
     },
     active: { color: "turquoise", background: { color: "transparent" } },
     focus: { border: { color: "transparent" } },
+  },
+  heading: {
+    level: {
+      "1": {
+        font: { family: "Playfair" },
+        medium: {
+          size: "70px",
+        },
+      },
+      "3": {
+        font: {},
+        medium: {
+          size: "18px",
+          maxWidth: "100%",
+        },
+      },
+      "4": {
+        font: {
+          weight: 400,
+        },
+      },
+    },
+    weight: 500,
+  },
+  checkBox: {
+    border: { color: "rgba(36, 42, 56, 0.1)" },
+    color: "#40E0D0",
+    hover: { border: { color: "#40E0D0" } },
   },
 };
 

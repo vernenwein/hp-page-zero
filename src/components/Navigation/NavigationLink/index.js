@@ -1,9 +1,38 @@
 import React from "react";
 import { Box, Button } from "grommet";
+import {
+  Home,
+  Analytics,
+  Target,
+  Configure,
+  CircleQuestion,
+} from "grommet-icons";
 
 const NavigationLink = (props) => {
-  const { currentPathname, pathname, icon, label, onClick, isOpen } = props;
+  const { currentPathname, pathname, label, onClick, isOpen } = props;
   const isActive = pathname === currentPathname;
+
+  let icon;
+  const iconColor = isActive ? "#40E0D0" : "white";
+  switch (pathname) {
+    case "/":
+      icon = <Home color={iconColor} />;
+      break;
+    case "/visions":
+      icon = <Target color={iconColor} />;
+      break;
+    case "/analytics":
+      icon = <Analytics color={iconColor} />;
+      break;
+    case "/settings":
+      icon = <Configure color={iconColor} />;
+      break;
+    case "/help":
+      icon = <CircleQuestion color={iconColor} />;
+    default:
+      break;
+  }
+
   return (
     <Box
       pad={{
@@ -13,7 +42,7 @@ const NavigationLink = (props) => {
       }}
     >
       <Button
-        className={isActive ? "btn-active" : ""}
+        className="nowrap"
         active={isActive}
         gap="small"
         alignSelf="start"
